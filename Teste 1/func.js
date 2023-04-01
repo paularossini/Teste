@@ -2,25 +2,29 @@ function verificaFibonacci(num) {
     let a = 0;
     let b = 1;
     let c = 0;
-  
-    while (c < num) {
-      c = a + b;
-      a = b;
-      b = c;
+
+    if(a === num || b === num){
+        return true;
+    }else{
+        while (c < num) {
+            c = a + b;
+            a = b;
+            b = c;
+          }
+          
+          if (c == num) {
+            return true;
+          } else {
+            return false;
+          }
     }
-  
-    if (c === num) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+}
   
 function ex1(){
-    var num = document.getElementById('num'); 
+    var num = document.getElementById('num').value; 
 
     if(verificaFibonacci(num) == true){
-        console.log(`${num} não pertence a sequencia`);
+        console.log(`${num} pertence a sequencia`);
     }else{
         console.log(`${num} não pertence a sequencia`);
     }
